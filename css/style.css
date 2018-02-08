@@ -26,21 +26,6 @@ p{
   letter-spacing: -1px;
 }
 
-/* Custom default button */
-.btn-default {
-  color: #fff;
-  text-shadow: none;
-  /* Prevent inheritence from `body` */
-  background-color: transparent;
-  border: 2px solid #fff;
-  border-radius: 20px;
-  padding: 0.5rem 2rem;
-}
-
-.btn-default:hover,
-.btn-default:focus {
-  background-color: rgba(255, 255, 255, 0.3);
-}
 
 /*
  * Base structure
@@ -48,6 +33,9 @@ p{
 html,
 body {
   height: 100%;
+  margin:0;
+  padding:0;
+  background: black;
 }
 
 body {
@@ -59,52 +47,48 @@ body {
 }
 
 
-/*.video-wrapper{
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top:0px;
-  height:0;
-  overflow:hidden
-}
-
-.video-wrapper iframe{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-*/
-
   #background {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     min-width: 100%;
     min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background-color: black;
-    background-size: cover;
+    width: auto;
+    height: auto;
+    z-index: 0;
 }
+
+/*.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; 16:9;
+  padding-top: 25px;
+  height: 0;
+}*/
+/*.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}*/
 
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
-  display: table;
+  display: flex;
   width: 100%;
   height: 100%;
   /* For at least Firefox */
   min-height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+ /* background: rgba(0, 0, 0, 0);*/
+/*  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+*/
 }
 
 .site-wrapper-inner {
-  display: table-cell;
+  display: flex;
   vertical-align: top;
 }
 
@@ -121,24 +105,20 @@ body {
 /*
  * Header
  */
-.masthead-brand {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 
 .nav-masthead {
   text-align: center;
   display: block;
+  z-index: 2;
 }
 
 .nav-masthead .nav-link {
   display: inline-block;
+  z-index: 2;
 }
 
+
 @media (min-width: 768px) {
-  .masthead-brand {
-    float: left;
-  }
   .nav-masthead {
     float: right;
   }
@@ -191,7 +171,8 @@ body {
   background: black;
   color: #999;
   /* IE8 proofing */
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255);
+  z-index: 2;
 }
 
 
@@ -232,7 +213,7 @@ input::placeholder {
 }
 
 .join p {
-  margin-top: 5px;
+  margin-top: 4px;
   font-size: 42px;
   font-family: 'Druk', sans-serif;
   color: white;
@@ -247,10 +228,11 @@ input {
 .email, .number{
     margin-top: 10px;
     font-size: 42px;
-    color: black;
     letter-spacing: -2px;
     width: 100%;
     padding-left: 15px;
+    border: none;
+    border-radius: 0px;
 }
 
 .sendbutton{
@@ -263,7 +245,9 @@ input {
     letter-spacing: -2px;
     padding-left: 25px;
     padding-right: 25px;
-    padding-top: 8px;
+    padding-top: 4px;
+    border: none;
+    border-radius: 0px;
 }
 
 
@@ -276,6 +260,7 @@ input {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 5px;
+    z-index: 2;
 }
 
 
@@ -287,7 +272,8 @@ input {
   .masthead {
     position: fixed;
     top: 0;
-  }
+    z-index: 2;
+}
   .mastfoot {
     position: fixed;
     bottom: 0;
@@ -315,11 +301,24 @@ input {
   .mastfoot,
   .cover-container {
     width: 100%;
+
+  }
+
+  .masthead,
+  .mastfoot{
+    width: 100%;
+    z-index: 2;
   }
 }
 
 
 @media (max-width: 768px) {
+
+  body {
+  height: 95%;
+
+}
+
   h1 {
       font-size: 1.5rem;
   }
@@ -328,9 +327,23 @@ input {
     font-size: 32px;
 }
 
-  #background {
-      top: 25%;
-      left: 46%;
+  .masthead,
+  .mastfoot{
+    width: 100%;
+    z-index: 2;
+  }
+
+
+ #background {
+    top: 28%;
+    left: 50%;
+    min-width: 98%;
+    min-height: 30%;
+    z-index: 0;
+     -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: auto;
+    height: auto;
 }
 
   .email, .number {
@@ -342,12 +355,21 @@ input {
     padding-left: 15px;
     margin-bottom: 10px;
     margin-left: 0;
+    padding-top: 5px;
 }
 
 .sendbutton {
     margin-left: 38px;
 }
 
+.sharebutton{
+    z-index: 4;
+}
+
+.tagfooter p {
+    font-size: 8px;
+    padding: 3px;
+}
 }
 
 

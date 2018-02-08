@@ -232,14 +232,15 @@ li.simpleSocialSharePrint:hover{
     cursor: pointer;
     background: red;
     font-family: 'Druk', sans-serif;
-    font-size: 30px;
+    font-size: 26px;
+    z-index: 2;
   }
 
 
   div.simpleSocialShareSitesContainer ul li.simpleSocialShareSiteContainer {
     float: left;
-    width: 35px;
-    height: 52px;
+    width: 26px;
+    height: 46px;
     cursor: pointer;
     padding: 16px;
 }
