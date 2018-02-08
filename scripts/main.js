@@ -3,6 +3,7 @@
 		$("div.shareThis").simpleSocialShare({sites: "", url: "", title: "Google", description: "Father of the Internet", image: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png", shareType: "button", triggerButtonActiveState: false, buttonSide: "left", orientation: "horizontal"});
 	});
 
+
  // function onYouTubeIframeAPIReady() {
  //  var player;
  //  player = new YT.Player('background', {
@@ -28,37 +29,37 @@
  // }
 
 
- 		  var tag = document.createElement('script');
-          tag.src = "https://www.youtube.com/iframe_api";
-          var firstScriptTag = document.getElementsByTagName('script')[0];
-          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+ 		  // var tag = document.createElement('script');
+     //      tag.src = "https://www.youtube.com/iframe_api";
+     //      var firstScriptTag = document.getElementsByTagName('script')[0];
+     //      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-          var player;
-          function onYouTubeIframeAPIReady() {
-            player = new YT.Player('background', {
-              height: '720',
-              width: '1280',
-              videoId: 'JXdP7OAZDaA',
-              playerVars :{'autoplay':1,'loop':1},
-              events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-              }
-            });
-          }
+     //      var player;
+     //      function onYouTubeIframeAPIReady() {
+     //        player = new YT.Player('background', {
+     //          height: '720',
+     //          width: '1280',
+     //          videoId: 'JXdP7OAZDaA',
+     //          playerVars :{'autoplay':1,'loop':1},
+     //          events: {
+     //            'onReady': onPlayerReady,
+     //            'onStateChange': onPlayerStateChange
+     //          }
+     //        });
+     //      }
 
-          function onPlayerReady(event) {
-               event.target.playVideo();
-               event.target.setVolume(80);
-          }
+     //      function onPlayerReady(event) {
+     //           event.target.playVideo();
+     //           event.target.setVolume(80);
+     //      }
 
-          var done = false;
-          function onPlayerStateChange(event) {
-            if (event.data == YT.PlayerState.PLAYING && !done) {
-              // setTimeout(playVideo, 500);
-                      done = true;
-            }
-               event.target.setVolume(80);
-          }
+     //      var done = false;
+     //      function onPlayerStateChange(event) {
+     //        if (event.data == YT.PlayerState.PLAYING && !done) {
+     //          // setTimeout(playVideo, 500);
+     //                  done = true;
+     //        }
+     //           event.target.setVolume(80);
+     //      }
 
 
