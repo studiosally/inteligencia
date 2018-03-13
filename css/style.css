@@ -2,6 +2,7 @@
  * Globals
  */
 /* Links */
+
 a,
 a:focus,
 a:hover {
@@ -16,15 +17,27 @@ a:hover {
 h1{
   text-transform: uppercase;
   letter-spacing: -1px;
+  color: white;
+  font-size: 74px;
 }
 
 h1 span{
   color: red;
 }
 
-p{
-  letter-spacing: -1px;
-}
+
+
+  h2{
+    font-size: 70px;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+
+  }
+
+  h2 span{
+    color:black;
+  }
 
 
 /*
@@ -49,11 +62,11 @@ body {
 
   #background {
     position: absolute;
-    top: 50%;
+    top: 42%;
     left: 50%;
     min-width: 100%;
     min-height: 100%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
+   -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     width: auto;
     height: auto;
@@ -121,6 +134,7 @@ body {
 @media (min-width: 768px) {
   .nav-masthead {
     float: right;
+    z-index: 2;
   }
 }
 
@@ -165,7 +179,7 @@ body {
 }
 
 /*
- * Footer
+ * suscriptionform
  */
 .mastfoot {
   background: black;
@@ -176,6 +190,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
+  padding-top: 20px;
 }
 
 
@@ -199,11 +214,6 @@ body {
 }
 
 
-
-/*
- * suscription form
- */
-
 input::placeholder {
   color: black;
   margin-top: 10px;
@@ -217,7 +227,7 @@ input::placeholder {
 
 .join p {
   margin-top: 4px;
-  font-size: 42px;
+  font-size: 40px;
   font-family: 'Druk', sans-serif;
   color: white;
   letter-spacing: -1px;
@@ -226,6 +236,11 @@ input {
     padding-top: 5px;
 
 }
+
+/*
+ * buttons
+ */
+
 
 
 .email, .number{
@@ -249,8 +264,18 @@ input {
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 4px;
-    border: none;
+    border: 2px solid red;
     border-radius: 0px;
+    cursor: pointer;
+    transition: all 1.5s ease 0s;
+    -moz-transform:  all 1.5s ease 0s;
+    -ms-transform:  all 1.5s ease 0s;
+    -webkit-transform:  all 1.5s ease 0s;
+}
+
+.sendbutton:hover{
+  background: black;
+  border: 2px solid red;
 }
 
 
@@ -268,18 +293,133 @@ input {
 
 
 /*
+ * unagency and values
+ */
+
+
+.section2{
+  background: url(../img/fotomedium.jpg) no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.agencytext{
+  margin: 0 auto;
+  padding-top: 26%;
+}
+
+.section3{
+  background: url(../img/values.jpg) no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.agencytext p {
+    font-weight: 400;
+    font-size: 24px;
+    font-family: lato;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+.agencytext p span{
+    font-weight: 600;
+}
+
+
+.valuebackground{
+  background-color: black;
+}
+
+.valuebackground h1, .valuelove h1{
+    margin: 0 auto;
+    padding-top: 115px;
+}
+
+.valuelove{
+    background-color: #ec2028;
+}
+
+.imagevalue{
+  padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+/*
+ * Footer 
+ */
+
+footer{
+  background-color: #ec2028;
+}
+
+.footerlegend{
+  margin-top: 100px;
+}
+
+.footerlegend_1{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.footerlegend h2, .footerlegend_1 h2{
+  text-align: center;
+  font-size: 80px;
+}
+
+.footerlegend_1 h2{
+  text-align: center;
+}
+
+
+.paypal {
+    font-weight: 400;
+    font-size: 50px;
+    cursor: pointer;
+    background: black;
+    color: white;
+    border: none;
+    padding: 20px 30px 20px 30px;
+    border: 2px solid;
+    transition: all 1.5s ease 0s;
+    -moz-transform:  all 1.5s ease 0s;
+    -ms-transform:  all 1.5s ease 0s;
+    -webkit-transform:  all 1.5s ease 0s;
+}
+
+
+input.paypal:hover{
+  color: black;
+  background: white;
+}
+
+.copyright {
+    font-weight: 300;
+    font-size: 18px;
+    font-family: lato;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    margin-top: 50px;
+}
+
+/*
  * Affix and center
  */
 @media (min-width: 768px) {
   /* Pull out the header and footer */
   .masthead {
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: 2;
 }
   .mastfoot {
-    position: fixed;
+    position: absolute;
     bottom: 0;
+    z-index: 1
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
@@ -299,20 +439,67 @@ input {
 
 }
 
-@media (min-width: 992px) {
-  .masthead,
-  .mastfoot,
+
+
+@media (min-width: 992px) and (max-width: 1440px) {
+
+  h1 {
+    font-size: 50px;
+}
+
+  .masthead {
+    width: 100%;
+    z-index: 2;
+  }
   .cover-container {
     width: 100%;
 
   }
 
-  .masthead,
   .mastfoot{
     width: 100%;
-    z-index: 2;
+    z-index: 1;
   }
+
+
+  .valuebackground h1, .valuelove h1 {
+    margin: 0 auto;
+    padding-top: 115px;
 }
+
+.join {
+    padding: 0;
+}
+.join p {
+    font-size: 36px;
+}
+
+
+.email, .number {
+    margin-top: 18px;
+    font-size: 35px;
+}
+
+.sendbutton {
+    font-size: 35px;
+    margin-top: 16px;
+
+}
+
+.agencytext h1 {
+    padding-top: 50%;
+    margin: 0;
+}
+
+.footerlegend {
+    margin-top: 30px;
+}
+
+.footerlegend_1 {
+    margin-bottom: 30px;
+}
+}
+
 
 
 @media (max-width: 768px) {
@@ -323,8 +510,13 @@ input {
 }
 
   h1 {
-      font-size: 1.5rem;
+      font-size: 60px;
   }
+
+  h2 {
+    font-size: 54px;
+
+}
 
 .join {
     margin-top: 20px;
@@ -334,8 +526,12 @@ input {
     font-size: 28px;
 }
 
-  .masthead,
   .mastfoot{
+    width: 100%;
+    z-index: 1;
+  }
+
+  .masthead{
     width: 100%;
     z-index: 2;
   }
@@ -358,7 +554,7 @@ input {
     font-size: 28px;
     color: black;
     letter-spacing: -2px;
-    width: 78%;
+    width: 100%;
     padding-left: 15px;
     margin-bottom: 10px;
     margin-left: 0;
@@ -366,7 +562,6 @@ input {
 }
 
 .sendbutton {
-    margin-left: 38px;
     font-size: 28px;
 }
 
@@ -378,6 +573,110 @@ input {
     font-size: 8px;
     padding: 3px;
 }
+
+.agencytext {
+    padding-top: 45%;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.agencytext p {
+    font-size: 18px;
+}
+
+
+.valuebackground h1, .valuelove h1 {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+
+.imagevalue img{
+  width: 100%;
+}
+
+.footerlegend h2 {
+    font-size: 60px;
+}
+
+.paypal {
+    font-size: 40px;
+    padding: 20px 32px 20px 32px;
+}
+
+.footerlegend_1 {
+    margin-bottom: 0px;
+}
+
+.copyright {
+    font-size: 12px;
+}
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+
+.agencytext {
+    padding-top: 10%;
+}
+
+.agencytext p {
+    font-size: 18px;
+}
+
+.join {
+    margin-top: 14px;
+    padding: 0;
+}
+
+.join p {
+    margin-top: 8px;
+    font-size: 30px;
+}
+
+.email, .number {
+    margin-top: 22px;
+    font-size: 26px;
+}
+
+.sendbutton {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+h1 {
+    font-size: 46px;
+}
+
+.valuebackground h1, .valuelove h1 {
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+
+h2 {
+    font-size: 40px;
+}
+
+.footerlegend h2 {
+    font-size: 60px;
+}
+
+.paypal {
+    font-size: 42px;
+}
+
+
+.footerlegend {
+    margin-top: 80px;
+}
+
+.copyright {
+    font-size: 14px;
+    margin-top: 30px;
+}
+
 }
 
 
